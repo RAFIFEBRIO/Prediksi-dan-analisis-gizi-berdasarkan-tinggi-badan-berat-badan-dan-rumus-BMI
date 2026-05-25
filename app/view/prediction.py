@@ -75,12 +75,12 @@ with col2:
     """, unsafe_allow_html=True)
 
     if process:
-        # Classifier: pakai 4 fitur (Age, Height, Weight, Bmi)
+        
         xs = scaler.transform(np.array([[age, height_m, weight, bmi]]))
         prediction  = clf.predict(xs)[0]
         probability = clf.predict_proba(xs)[0]
 
-        # Cluster: pakai Weight + Bmi saja (sesuai training)
+        
         xc = scaler_cluster.transform(np.array([[weight, bmi]]))
         cluster_id  = int(kmeans.predict(xc)[0])
         cluster_lbl = cluster_map.get(cluster_id, f"Cluster {cluster_id}")
