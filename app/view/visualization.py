@@ -64,7 +64,7 @@ with tab3:
     st.markdown("#### Statistik per Cluster")
     try:
         MD = os.path.join(APP_DIR, "..", "model")
-        # Pakai scaler_cluster (Weight+Bmi) — sesuai model baru
+       
         sc_cluster = joblib.load(os.path.join(MD, "scaler_cluster.pkl"))
         km = joblib.load(os.path.join(MD, "kmeans.pkl"))
         with open(os.path.join(MD, "cluster_labels.json"), encoding="utf-8") as f:
